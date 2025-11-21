@@ -1,18 +1,51 @@
-# React + Vite
+# MAPORIA Web (Refactored)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+MAPORIA is a gamified travel companion concept for exploring Sri Lanka. This refactored web landing experience introduces a light green exploration theme and modular component architecture.
 
-Currently, two official plugins are available:
+## What Changed In The Refactor
+- Light Green Theme: New semantic design tokens in `src/theme.css` replace previous dark teal palette.
+- Modular Components: `Navbar`, `Hero`, `FeaturesSection`, `TeamSection`, `Footer`, and `MapPhoneMockup` extracted to `src/components/` for clarity and reuse.
+- Simplified Global Styles: `App.css` now focuses on semantic classes; `index.css` reduced to a minimal reset.
+- Map Mockup: Phone + map visualization updated to match light palette and softer shadows.
+- Feature Cards & Team Carousel: Updated colors, hover interactions, and accessibility labels.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Project Structure
+```
+src/
+	App.jsx            # Composes page layout
+	App.css            # Main component/class styles (light theme variants)
+	theme.css          # Design tokens (CSS variables)
+	index.css          # Minimal reset
+	components/
+		Navbar.jsx
+		Hero.jsx
+		FeaturesSection.jsx
+		FeatureCard.jsx
+		MapPhoneMockup.jsx
+		TeamSection.jsx
+		TeamMember.jsx
+		Footer.jsx
+```
 
-## React Compiler
+## Design Tokens (theme.css)
+Tokens are prefixed with `--color-` for palette and `--shadow-*`, `--radius-*` for shape/elevation.
+Update or extend by editing `src/theme.css`.
 
-The React Compiler is enabled on this template. See [this documentation](https://react.dev/learn/react-compiler) for more information.
+## Running Locally
+```bash
+npm install
+npm run dev
+```
+Visit the reported local URL (usually `http://localhost:5173`).
 
-Note: This will impact Vite dev & build performances.
+## Next Steps / Roadmap Placeholders
+- Integrate real feature data from the attached features list (pending details).
+- Add responsive mobile menu slide-out.
+- Replace inline styles with utility classes or CSS modules for remaining components.
+- Consider theming toggle (light/dark) using token layering.
 
-## Expanding the ESLint configuration
+## Contributing
+Keep changes focused and align with existing semantic class patterns. Prefer modifying tokens over scattering new hex codes.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+---
+If you provide the exact Features list from the attachment, placeholders can be expanded with richer copy or dynamic loading.
