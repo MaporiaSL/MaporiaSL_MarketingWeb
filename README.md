@@ -1,18 +1,126 @@
-# React + Vite
+# README.md
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+```md
+# 🌍 MaporiaSL Marketing Website
+A modern, animated, responsive landing page for **MaporiaSL**, the gamified Sri Lankan travel portfolio app.
 
-Currently, two official plugins are available:
+Built with:
+- ⚡ **Vite**
+- ⚛️ **React (JSX)**
+- 🎨 **Custom CSS** (No frameworks)
+- ✨ **Sunset Coastline Theme**
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+---
 
-## React Compiler
+## 📁 Project Structure
+```
 
-The React Compiler is enabled on this template. See [this documentation](https://react.dev/learn/react-compiler) for more information.
+src/
+assets/
+components/
+pages/
+App.jsx
+main.jsx
+index.css
+theme.css
+App.css
 
-Note: This will impact Vite dev & build performances.
+```
+```
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## 🚀 Running the Project
+
+### Install Dependencies
+
+```bash
+npm install
+```
+
+### Start Development Server
+
+```bash
+npm run dev
+```
+
+### Build for Production
+
+```bash
+npm run build
+```
+
+### Preview Production Build
+
+```bash
+npm run preview
+```
+
+---
+
+## 🎨 Theme Palette (Sunset Coastline)
+
+| Name           | Hex     |
+| -------------- | ------- |
+| Deep Navy      | #0A1A2F |
+| Sunrise Orange | #F78A1D |
+| Coral Peach    | #FFAD90 |
+| Sand Beige     | #F3E5D8 |
+| Ocean Teal     | #1CA8A9 |
+
+---
+
+## 📦 Features Included
+
+* Hero section with CTA
+* Features overview grid
+* 4-screen app mockup showcase
+* Team section with GitHub + LinkedIn
+* Footer with waitlist signup
+* Go-to-top button
+* Smooth scroll animations
+* Fully responsive layout
+
+---
+
+## 🌐 Deployment
+
+### **Vercel**
+
+* Auto-detects Vite
+* Automatic previews for every PR
+
+### **Netlify**
+
+```bash
+npm run build
+```
+
+Set the output directory to:
+
+```
+dist
+```
+
+### **GitHub Pages**
+
+Use the Vite GitHub Pages deployment guide.
+
+---
+
+## 📬 Contact
+
+**Project Email:**
+[hello@maporia.app](mailto:hello@maporia.app)
+
+**Project GitHub Repo:**
+[https://github.com/your-org/maporia](https://github.com/your-org/maporia)
+
+---
+
+## 📝 License
+
+MIT License
+
+```
+```
