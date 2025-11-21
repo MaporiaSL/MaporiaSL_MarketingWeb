@@ -1,51 +1,126 @@
-# MAPORIA Web (Refactored)
+# README.md
 
-MAPORIA is a gamified travel companion concept for exploring Sri Lanka. This refactored web landing experience introduces a light green exploration theme and modular component architecture.
+```md
+# 🌍 MaporiaSL Marketing Website
+A modern, animated, responsive landing page for **MaporiaSL**, the gamified Sri Lankan travel portfolio app.
 
-## What Changed In The Refactor
-- Light Green Theme: New semantic design tokens in `src/theme.css` replace previous dark teal palette.
-- Modular Components: `Navbar`, `Hero`, `FeaturesSection`, `TeamSection`, `Footer`, and `MapPhoneMockup` extracted to `src/components/` for clarity and reuse.
-- Simplified Global Styles: `App.css` now focuses on semantic classes; `index.css` reduced to a minimal reset.
-- Map Mockup: Phone + map visualization updated to match light palette and softer shadows.
-- Feature Cards & Team Carousel: Updated colors, hover interactions, and accessibility labels.
-
-## Project Structure
-```
-src/
-	App.jsx            # Composes page layout
-	App.css            # Main component/class styles (light theme variants)
-	theme.css          # Design tokens (CSS variables)
-	index.css          # Minimal reset
-	components/
-		Navbar.jsx
-		Hero.jsx
-		FeaturesSection.jsx
-		FeatureCard.jsx
-		MapPhoneMockup.jsx
-		TeamSection.jsx
-		TeamMember.jsx
-		Footer.jsx
-```
-
-## Design Tokens (theme.css)
-Tokens are prefixed with `--color-` for palette and `--shadow-*`, `--radius-*` for shape/elevation.
-Update or extend by editing `src/theme.css`.
-
-## Running Locally
-```bash
-npm install
-npm run dev
-```
-Visit the reported local URL (usually `http://localhost:5173`).
-
-## Next Steps / Roadmap Placeholders
-- Integrate real feature data from the attached features list (pending details).
-- Add responsive mobile menu slide-out.
-- Replace inline styles with utility classes or CSS modules for remaining components.
-- Consider theming toggle (light/dark) using token layering.
-
-## Contributing
-Keep changes focused and align with existing semantic class patterns. Prefer modifying tokens over scattering new hex codes.
+Built with:
+- ⚡ **Vite**
+- ⚛️ **React (JSX)**
+- 🎨 **Custom CSS** (No frameworks)
+- ✨ **Sunset Coastline Theme**
 
 ---
-If you provide the exact Features list from the attachment, placeholders can be expanded with richer copy or dynamic loading.
+
+## 📁 Project Structure
+```
+
+src/
+assets/
+components/
+pages/
+App.jsx
+main.jsx
+index.css
+theme.css
+App.css
+
+```
+```
+
+---
+
+## 🚀 Running the Project
+
+### Install Dependencies
+
+```bash
+npm install
+```
+
+### Start Development Server
+
+```bash
+npm run dev
+```
+
+### Build for Production
+
+```bash
+npm run build
+```
+
+### Preview Production Build
+
+```bash
+npm run preview
+```
+
+---
+
+## 🎨 Theme Palette (Sunset Coastline)
+
+| Name           | Hex     |
+| -------------- | ------- |
+| Deep Navy      | #0A1A2F |
+| Sunrise Orange | #F78A1D |
+| Coral Peach    | #FFAD90 |
+| Sand Beige     | #F3E5D8 |
+| Ocean Teal     | #1CA8A9 |
+
+---
+
+## 📦 Features Included
+
+* Hero section with CTA
+* Features overview grid
+* 4-screen app mockup showcase
+* Team section with GitHub + LinkedIn
+* Footer with waitlist signup
+* Go-to-top button
+* Smooth scroll animations
+* Fully responsive layout
+
+---
+
+## 🌐 Deployment
+
+### **Vercel**
+
+* Auto-detects Vite
+* Automatic previews for every PR
+
+### **Netlify**
+
+```bash
+npm run build
+```
+
+Set the output directory to:
+
+```
+dist
+```
+
+### **GitHub Pages**
+
+Use the Vite GitHub Pages deployment guide.
+
+---
+
+## 📬 Contact
+
+**Project Email:**
+[hello@maporia.app](mailto:hello@maporia.app)
+
+**Project GitHub Repo:**
+[https://github.com/your-org/maporia](https://github.com/your-org/maporia)
+
+---
+
+## 📝 License
+
+MIT License
+
+```
+```

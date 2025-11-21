@@ -1,54 +1,17 @@
-import React, { useState } from 'react';
-import { Compass, Menu, X } from 'lucide-react';
+export default function Navbar() {
+return (
+<header style={{position: 'sticky', top: 0, background: 'var(--bg-default)', zIndex: 50}}>
+<nav className="container" style={{display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '20px 0'}}>
+<h1 style={{fontSize: '24px', fontWeight: 700}}>MaporiaSL</h1>
 
-export default function Navbar({ isScrolled }) {
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
-  const navLinks = [
-    { name: 'Features', href: '#features' },
-    { name: 'Team', href: '#team' },
-    { name: 'Contact', href: '#footer' },
-  ];
-
-  return (
-    <nav className={`navbar ${isScrolled ? 'scrolled' : ''}`}>
-      <div className="nav-container">
-        <a href="#" className="logo">
-          <div className="logo-icon">
-            <Compass size={20} />
-          </div>
-          MAPORIA
-        </a>
-
-        <div className="nav-links">
-          {navLinks.map((link) => (
-            <a key={link.name} href={link.href} className="nav-link">
-              {link.name}
-            </a>
-          ))}
-          <a href="https://github.com/MaporiaSL" target="_blank" rel="noopener noreferrer" className="btn-outline">
-            GitHub
-          </a>
-        </div>
-
-        <button
-          className="mobile-menu-btn"
-          onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-          aria-label="Toggle menu"
-        >
-          {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
-        </button>
-      </div>
-
-      {mobileMenuOpen && (
-        <div className="mobile-menu" style={{ display: 'flex', flexDirection: 'column', gap: '1rem', padding: '1rem 2rem' }}>
-          {navLinks.map((link) => (
-            <a key={link.name} href={link.href} className="nav-link" onClick={() => setMobileMenuOpen(false)}>
-              {link.name}
-            </a>
-          ))}
-        </div>
-      )}
-    </nav>
-  );
+<ul style={{display: 'flex', gap: '28px', listStyle: 'none'}}>
+<li><a href="#features">Features</a></li>
+<li><a href="#mockups">Mockups</a></li>
+<li><a href="#team">Team</a></li>
+<li><a href="#waitlist">Waitlist</a></li>
+</ul>
+</nav>
+</header>
+);
 }
