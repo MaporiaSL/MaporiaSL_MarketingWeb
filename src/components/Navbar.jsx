@@ -1,13 +1,10 @@
 import { useState, useEffect } from 'react';
 
 export default function Navbar() {
-  const [scrolled, setScrolled] = useState(false);
   const [activeSection, setActiveSection] = useState('hero');
 
   useEffect(() => {
     const handleScroll = () => {
-      setScrolled(window.scrollY > 20);
-
       // Update active section
       const sections = ['hero', 'features', 'mockups', 'team', 'waitlist'];
       const current = sections.find(section => {
