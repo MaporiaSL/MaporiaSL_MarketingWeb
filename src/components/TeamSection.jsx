@@ -5,14 +5,14 @@ export default function TeamSection() {
       role: "Frontend Developer", 
       github: "https://github.com/anucr", 
       linkedin: "",
-      avatar: "/team-avatar/man.png"
+      avatar: "/team-avatar/man-3.jpg"
     },
     { 
       name: "Anuja Jayasinghe", 
       role: "Frontend Developer", 
       github: "https://github.com/Anuja-jayasinghe", 
       linkedin: "https://www.linkedin.com/in/anuja-jayasinghe/",
-      avatar: "/team-avatar/woman.png"
+      avatar: "/team-avatar/man.png"
     },
     { 
       name: "Pudamya Yamini", 
@@ -40,7 +40,7 @@ export default function TeamSection() {
       role: "UI/UX & Product Design", 
       github: "https://github.com/hitheshik", 
       linkedin: "",
-      avatar: "/team-avatar/man-3.jpg"
+      avatar: "/team-avatar/woman.png"
     },
   ];
 
