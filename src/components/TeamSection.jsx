@@ -5,48 +5,42 @@ export default function TeamSection() {
       role: "Frontend Developer", 
       github: "https://github.com/anucr", 
       linkedin: "",
-      initials: "AR",
-      color: "#4A90E2"
+      avatar: "/team-avatar/man.png"
     },
     { 
       name: "Anuja Jayasinghe", 
       role: "Frontend Developer", 
       github: "https://github.com/Anuja-jayasinghe", 
       linkedin: "https://www.linkedin.com/in/anuja-jayasinghe/",
-      initials: "AJ",
-      color: "#E94B3C"
+      avatar: "/team-avatar/woman.png"
     },
     { 
       name: "Pudamya Yamini", 
       role: "UI/UX & Flutter Specialist", 
       github: "https://github.com/PudamyaYamini", 
       linkedin: "http://www.linkedin.com/in/pudamya-de-silva-1a2ab7320",
-      initials: "PY",
-      color: "#F5A623"
+      avatar: "/team-avatar/woman-3.png"
     },
     { 
       name: "Kaushal Senevirathne", 
       role: "Frontend Developer", 
       github: "https://github.com/KaushalSenevirathne", 
       linkedin: "",
-      initials: "KS",
-      color: "#50C878"
+      avatar: "/team-avatar/man-2.png"
     },
     { 
       name: "Sedani Lesara", 
       role: "UI/UX & QA", 
       github: "https://github.com/Sedani25", 
       linkedin: "http://www.linkedin.com/in/sedani-lesara-sethumlee-956998395",
-      initials: "SL",
-      color: "#9B59B6"
+      avatar: "/team-avatar/woman-3.jpg"
     },
     { 
       name: "Hitheshi Kariyawasam", 
       role: "UI/UX & Product Design", 
       github: "https://github.com/hitheshik", 
       linkedin: "",
-      initials: "HK",
-      color: "#E74C3C"
+      avatar: "/team-avatar/man-3.jpg"
     },
   ];
 
@@ -62,8 +56,11 @@ export default function TeamSection() {
           {team.map((member, index) => (
             <div key={index} className="team-card">
               <div className="team-card-inner">
-                <div className="team-avatar" style={{ background: member.color }}>
-                  <span className="avatar-initials">{member.initials}</span>
+                <div className="team-avatar">
+                  <img 
+                    src={member.avatar} 
+                    alt={member.name}
+                  />
                 </div>
                 
                 <div className="team-info">
