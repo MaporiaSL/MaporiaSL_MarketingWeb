@@ -11,7 +11,7 @@ const team = [
         role: "Frontend Developer",
         github: "https://github.com/anucr",
         linkedin: "",
-        avatar: "/team-avatar/man-3.jpg",
+        avatar: "https://api.dicebear.com/9.x/notionists/svg?seed=Anuk&backgroundColor=e0f2fe",
         initials: "AR"
     },
     {
@@ -19,7 +19,7 @@ const team = [
         role: "Frontend Developer",
         github: "https://github.com/Anuja-jayasinghe",
         linkedin: "https://www.linkedin.com/in/anuja-jayasinghe/",
-        avatar: "/team-avatar/man.png",
+        avatar: "https://api.dicebear.com/9.x/notionists/svg?seed=Anuja&backgroundColor=ccfbf1",
         initials: "AJ"
     },
     {
@@ -27,7 +27,7 @@ const team = [
         role: "UI/UX & Flutter Specialist",
         github: "https://github.com/PudamyaYamini",
         linkedin: "http://www.linkedin.com/in/pudamya-de-silva-1a2ab7320",
-        avatar: "/team-avatar/woman-3.png",
+        avatar: "https://api.dicebear.com/9.x/notionists/svg?seed=Coco&backgroundColor=fce7f3",
         initials: "PY"
     },
     {
@@ -35,7 +35,7 @@ const team = [
         role: "Frontend Developer",
         github: "https://github.com/KaushalSenevirathne",
         linkedin: "",
-        avatar: "/team-avatar/man-2.png",
+        avatar: "https://api.dicebear.com/9.x/notionists/svg?seed=Kaushal&backgroundColor=fef3c7",
         initials: "KS"
     },
     {
@@ -43,7 +43,7 @@ const team = [
         role: "UI/UX & Product Design",
         github: "https://github.com/hitheshik",
         linkedin: "https://www.linkedin.com/in/hitheshi-kariyawasam-719600378/",
-        avatar: "/team-avatar/woman.png",
+        avatar: "https://api.dicebear.com/9.x/notionists/svg?seed=Bella&backgroundColor=ede9fe",
         initials: "HK"
     },
     {
@@ -51,7 +51,7 @@ const team = [
         role: "UI/UX & QA",
         github: "https://github.com/Sedani25",
         linkedin: "http://www.linkedin.com/in/sedani-lesara-sethumlee-956998395",
-        avatar: "/team-avatar/woman-3.jpg",
+        avatar: "https://api.dicebear.com/9.x/notionists/svg?seed=Daisy&backgroundColor=ffe4e6",
         initials: "SL"
     }
 ];
@@ -153,12 +153,10 @@ export function Team() {
                                 >
                                     <GlassCard className="flex flex-col sm:flex-row items-center sm:items-start gap-6 p-6 hover:border-teal-500/30 transition-colors group">
                                         {/* Avatar / Circle */}
-                                        <div className="relative shrink-0">
-                                            <div className="w-16 h-16 rounded-full bg-slate-800 flex items-center justify-center text-xl font-bold text-white border border-white/10 group-hover:border-teal-500 transition-colors">
-                                                {member.initials}
+                                        <div className="relative shrink-0 w-16 h-16">
+                                            <div className="w-full h-full rounded-full bg-slate-800 flex items-center justify-center text-xl font-bold text-white border border-white/10 group-hover:border-teal-500 transition-colors overflow-hidden">
+                                                <img src={member.avatar} alt={member.name} className="w-full h-full object-cover" />
                                             </div>
-                                            {/* If real images exist, uncomment below and remove specific height/width above if needed, or overlay */}
-                                            {/* <img src={member.avatar} alt={member.name} className="w-16 h-16 rounded-full object-cover absolute inset-0" /> */}
                                         </div>
 
                                         {/* Info */}
