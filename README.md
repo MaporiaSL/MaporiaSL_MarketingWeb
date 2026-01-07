@@ -1,126 +1,36 @@
-# README.md
+This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
-```md
-# 🌍 MaporiaSL Marketing Website
-A modern, animated, responsive landing page for **MaporiaSL**, the gamified Sri Lankan travel portfolio app.
+## Getting Started
 
-Built with:
-- ⚡ **Vite**
-- ⚛️ **React (JSX)**
-- 🎨 **Custom CSS** (No frameworks)
-- ✨ **Sunset Coastline Theme**
-
----
-
-## 📁 Project Structure
-```
-
-src/
-assets/
-components/
-pages/
-App.jsx
-main.jsx
-index.css
-theme.css
-App.css
-
-```
-```
-
----
-
-## 🚀 Running the Project
-
-### Install Dependencies
-
-```bash
-npm install
-```
-
-### Start Development Server
+First, run the development server:
 
 ```bash
 npm run dev
+# or
+yarn dev
+# or
+pnpm dev
+# or
+bun dev
 ```
 
-### Build for Production
+Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-```bash
-npm run build
-```
+You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
 
-### Preview Production Build
+This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
 
-```bash
-npm run preview
-```
+## Learn More
 
----
+To learn more about Next.js, take a look at the following resources:
 
-## 🎨 Theme Palette (Sunset Coastline)
+- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
+- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
 
-| Name           | Hex     |
-| -------------- | ------- |
-| Deep Navy      | #0A1A2F |
-| Sunrise Orange | #F78A1D |
-| Coral Peach    | #FFAD90 |
-| Sand Beige     | #F3E5D8 |
-| Ocean Teal     | #1CA8A9 |
+You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
 
----
+## Deploy on Vercel
 
-## 📦 Features Included
+The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
-* Hero section with CTA
-* Features overview grid
-* 4-screen app mockup showcase
-* Team section with GitHub + LinkedIn
-* Footer with waitlist signup
-* Go-to-top button
-* Smooth scroll animations
-* Fully responsive layout
-
----
-
-## 🌐 Deployment
-
-### **Vercel**
-
-* Auto-detects Vite
-* Automatic previews for every PR
-
-### **Netlify**
-
-```bash
-npm run build
-```
-
-Set the output directory to:
-
-```
-dist
-```
-
-### **GitHub Pages**
-
-Use the Vite GitHub Pages deployment guide.
-
----
-
-## 📬 Contact
-
-**Project Email:**
-[hello@maporia.app](mailto:hello@maporia.app)
-
-**Project GitHub Repo:**
-[https://github.com/your-org/maporia](https://github.com/your-org/maporia)
-
----
-
-## 📝 License
-
-MIT License
-
-```
-```
+Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
