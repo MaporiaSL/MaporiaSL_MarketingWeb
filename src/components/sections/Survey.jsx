@@ -17,7 +17,7 @@ export function Survey() {
                 <Button
                     variant="secondary"
                     className="font-bold text-black"
-                    onClick={() => window.open('https://forms.google.com', '_blank')} // Placeholder URL
+                    onClick={() => window.open('https://docs.google.com/forms/d/e/1FAIpQLScaxSJvazr3Yl-xFzJ2AxSkVf508wNh0B7sY7dOhG71mExMsA/viewform', '_blank')}
                 >
                     Take the Quick Survey
                 </Button>

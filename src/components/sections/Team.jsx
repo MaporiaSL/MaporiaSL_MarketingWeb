@@ -1,66 +1,192 @@
 'use client';
 
-import { motion } from 'framer-motion';
+import { useState } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
 import { GlassCard } from '../ui/GlassCard';
+import { Github, Linkedin, Plus, Minus } from 'lucide-react';
 
-/* Placeholder Team Data */
 const team = [
     {
-        name: "Team Lead",
-        role: "Project Manager & Dev",
-        image: "https://ui-avatars.com/api/?name=Team+Lead&background=0D8ABC&color=fff"
+        name: "Anuk Ranasinghe",
+        role: "Frontend Developer",
+        github: "https://github.com/anucr",
+        linkedin: "",
+        avatar: "/team-avatar/man-3.jpg",
+        initials: "AR"
     },
     {
-        name: "Lead Designer",
-        role: "UI/UX & Gamification",
-        image: "https://ui-avatars.com/api/?name=Lead+Designer&background=14b8a6&color=fff"
+        name: "Anuja Jayasinghe",
+        role: "Frontend Developer",
+        github: "https://github.com/Anuja-jayasinghe",
+        linkedin: "https://www.linkedin.com/in/anuja-jayasinghe/",
+        avatar: "/team-avatar/man.png",
+        initials: "AJ"
     },
     {
-        name: "Backend Dev",
-        role: "Systems Architect",
-        image: "https://ui-avatars.com/api/?name=Backend+Dev&background=fbbf24&color=000"
+        name: "Pudamya Yamini",
+        role: "UI/UX & Flutter Specialist",
+        github: "https://github.com/PudamyaYamini",
+        linkedin: "http://www.linkedin.com/in/pudamya-de-silva-1a2ab7320",
+        avatar: "/team-avatar/woman-3.png",
+        initials: "PY"
     },
     {
-        name: "Mobile Dev",
-        role: "Flutter Specialist",
-        image: "https://ui-avatars.com/api/?name=Mobile+Dev&background=f472b6&color=fff"
+        name: "Kaushal Senevirathne",
+        role: "Frontend Developer",
+        github: "https://github.com/KaushalSenevirathne",
+        linkedin: "",
+        avatar: "/team-avatar/man-2.png",
+        initials: "KS"
+    },
+    {
+        name: "Sedani Lesara",
+        role: "UI/UX & QA",
+        github: "https://github.com/Sedani25",
+        linkedin: "http://www.linkedin.com/in/sedani-lesara-sethumlee-956998395",
+        avatar: "/team-avatar/woman-3.jpg",
+        initials: "SL"
+    },
+    {
+        name: "Hitheshi Kariyawasam",
+        role: "UI/UX & Product Design",
+        github: "https://github.com/hitheshik",
+        linkedin: "",
+        avatar: "/team-avatar/woman.png",
+        initials: "HK"
     }
 ];
 
-export function Team() {
-    return (
-        <section className="py-24 bg-slate-900 border-t border-white/5">
-            <div className="container mx-auto px-4">
-                <motion.div
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    className="text-center mb-16"
-                >
-                    <h2 className="text-3xl md:text-5xl font-bold text-white mb-4">Built by <span className="text-amber-400">Team Maporia</span></h2>
-                    <p className="text-slate-400">Passionate undergraduates building the future of Sri Lankan travel.</p>
-                </motion.div>
+const accordionData = [
+    {
+        title: "Our Mission",
+        content: "To gamify travel in Sri Lanka, encouraging locals and tourists to explore hidden gems, cultural landmarks, and nature trails, promoting sustainable and diversified tourism across all 25 districts."
+    },
+    {
+        title: "Our Vision",
+        content: "To become the ultimate digital travel companion that transforms exploring Sri Lanka into an engaging, rewarding, and shareable adventure for everyone."
+    },
+    {
+        title: "Why We Started",
+        content: "We realized that many beautiful locations in Sri Lanka go unnoticed. We wanted to build an app that makes discovery fun, rewarding curiosity with digital achievements and creating a verified travel portfolio."
+    }
+];
 
-                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-                    {team.map((member, index) => (
+function Accordion({ title, content, isOpen, onClick }) {
+    return (
+        <div className="mb-4">
+            <button
+                onClick={onClick}
+                className={`w-full flex items-center justify-between p-6 rounded-2xl transition-all duration-300 border ${isOpen ? 'bg-teal-500/10 border-teal-500' : 'bg-white/5 border-white/10 hover:border-white/20'}`}
+            >
+                <span className="text-lg font-bold text-white">{title}</span>
+                {isOpen ? <Minus className="text-teal-400" /> : <Plus className="text-teal-400" />}
+            </button>
+            <AnimatePresence>
+                {isOpen && (
+                    <motion.div
+                        initial={{ height: 0, opacity: 0 }}
+                        animate={{ height: "auto", opacity: 1 }}
+                        exit={{ height: 0, opacity: 0 }}
+                        className="overflow-hidden"
+                    >
+                        <div className={`p-6 pt-2 text-slate-400 leading-relaxed border-l-2 border-teal-500/30 ml-6 my-2`}>
+                            {content}
+                        </div>
+                    </motion.div>
+                )}
+            </AnimatePresence>
+        </div>
+    );
+}
+
+export function Team() {
+    const [openAccordion, setOpenAccordion] = useState(0);
+
+    return (
+        <section className="py-24 bg-slate-950 border-t border-white/5 relative overflow-hidden">
+            {/* Background Glow */}
+            <div className="absolute top-1/4 left-0 w-[500px] h-[500px] bg-teal-500/5 rounded-full blur-[128px] pointer-events-none" />
+
+            <div className="container mx-auto px-4">
+                <div className="flex flex-col lg:flex-row gap-16">
+
+                    {/* LEFT SIDE: Info & Accordion */}
+                    <div className="lg:w-1/3">
                         <motion.div
-                            key={index}
-                            initial={{ opacity: 0, scale: 0.9 }}
-                            whileInView={{ opacity: 1, scale: 1 }}
+                            initial={{ opacity: 0, x: -30 }}
+                            whileInView={{ opacity: 1, x: 0 }}
                             viewport={{ once: true }}
-                            transition={{ delay: index * 0.1 }}
                         >
-                            <GlassCard className="text-center flex flex-col items-center p-8 bg-white/5 border-white/10">
-                                <img
-                                    src={member.image}
-                                    alt={member.name}
-                                    className="w-24 h-24 rounded-full mb-4 border-2 border-teal-500/50 shadow-lg shadow-teal-500/20"
-                                />
-                                <h3 className="text-xl font-bold text-white">{member.name}</h3>
-                                <p className="text-teal-400 text-sm font-medium">{member.role}</p>
-                            </GlassCard>
+                            <span className="text-teal-400 font-bold tracking-wider text-sm uppercase mb-4 block">The Builders</span>
+                            <h2 className="text-4xl md:text-5xl font-bold text-white mb-6 leading-tight">
+                                Meet the Minds Behind <br />
+                                <span className="text-transparent bg-clip-text bg-gradient-to-r from-teal-400 to-emerald-400">Maporia</span>
+                            </h2>
+                            <p className="text-slate-400 mb-10 text-lg">
+                                We are a group of passionate innovators from IIT. We are building Maporia to solve real-world engagement problems with code and creativity.
+                            </p>
+
+                            <div className="space-y-2">
+                                {accordionData.map((item, index) => (
+                                    <Accordion
+                                        key={index}
+                                        title={item.title}
+                                        content={item.content}
+                                        isOpen={openAccordion === index}
+                                        onClick={() => setOpenAccordion(index === openAccordion ? -1 : index)}
+                                    />
+                                ))}
+                            </div>
                         </motion.div>
-                    ))}
+                    </div>
+
+                    {/* RIGHT SIDE: Team Grid */}
+                    <div className="lg:w-2/3">
+                        <div className="grid grid-cols-1 gap-4">
+                            {team.map((member, index) => (
+                                <motion.div
+                                    key={index}
+                                    initial={{ opacity: 0, x: 30 }}
+                                    whileInView={{ opacity: 1, x: 0 }}
+                                    viewport={{ once: true }}
+                                    transition={{ delay: index * 0.1 }}
+                                >
+                                    <GlassCard className="flex flex-col sm:flex-row items-center sm:items-start gap-6 p-6 hover:border-teal-500/30 transition-colors group">
+                                        {/* Avatar / Circle */}
+                                        <div className="relative shrink-0">
+                                            <div className="w-16 h-16 rounded-full bg-slate-800 flex items-center justify-center text-xl font-bold text-white border border-white/10 group-hover:border-teal-500 transition-colors">
+                                                {member.initials}
+                                            </div>
+                                            {/* If real images exist, uncomment below and remove specific height/width above if needed, or overlay */}
+                                            {/* <img src={member.avatar} alt={member.name} className="w-16 h-16 rounded-full object-cover absolute inset-0" /> */}
+                                        </div>
+
+                                        {/* Info */}
+                                        <div className="flex-1 text-center sm:text-left">
+                                            <h3 className="text-xl font-bold text-white group-hover:text-teal-400 transition-colors">{member.name}</h3>
+                                            <p className="text-teal-500 text-xs font-bold uppercase tracking-wide mb-2">{member.role}</p>
+
+                                        </div>
+
+                                        {/* Socials */}
+                                        <div className="flex gap-4 opacity-100 transition-opacity">
+                                            {member.linkedin && (
+                                                <a href={member.linkedin} target="_blank" rel="noopener noreferrer" className="text-slate-400 hover:text-white transition-colors">
+                                                    <Linkedin size={20} />
+                                                </a>
+                                            )}
+                                            {member.github && (
+                                                <a href={member.github} target="_blank" rel="noopener noreferrer" className="text-slate-400 hover:text-white transition-colors">
+                                                    <Github size={20} />
+                                                </a>
+                                            )}
+                                        </div>
+                                    </GlassCard>
+                                </motion.div>
+                            ))}
+                        </div>
+                    </div>
+
                 </div>
             </div>
         </section>

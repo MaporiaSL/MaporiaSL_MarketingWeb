@@ -2,13 +2,13 @@ import { clsx } from 'clsx';
 import { twMerge } from 'tailwind-merge';
 
 export function Button({ className, variant = 'primary', size = 'md', children, ...props }) {
-    const baseStyles = 'inline-flex items-center justify-center rounded-full font-medium transition-all focus:outline-none focus:ring-2 focus:ring-offset-2 disabled:opacity-50 disabled:pointer-events-none active:scale-95';
+    const baseStyles = 'inline-flex items-center justify-center rounded-full font-medium transition-all focus:outline-none disabled:opacity-50 disabled:pointer-events-none active:scale-95';
 
     const variants = {
-        primary: 'bg-[var(--primary)] text-[var(--primary-foreground)] hover:brightness-110 shadow-lg shadow-teal-500/30',
-        secondary: 'bg-[var(--secondary)] text-[var(--secondary-foreground)] hover:brightness-110',
-        glass: 'glass-panel text-white hover:bg-white/10 border-white/20',
-        ghost: 'hover:bg-white/5 text-slate-200',
+        primary: 'bg-[var(--primary)] text-[var(--primary-foreground)] hover:brightness-110 shadow-lg shadow-teal-500/30 border-none',
+        secondary: 'bg-[var(--secondary)] text-[var(--secondary-foreground)] hover:brightness-110 border-none',
+        glass: 'glass-panel text-white hover:bg-white/10 border-none',
+        ghost: 'hover:bg-white/5 text-slate-200 border-none',
     };
 
     const sizes = {

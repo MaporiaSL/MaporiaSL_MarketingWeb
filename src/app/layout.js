@@ -14,6 +14,23 @@ const geistMono = Geist_Mono({
 export const metadata = {
   title: "Maporia - Rediscover Sri Lanka",
   description: "A gamified travel portfolio app to unlock the beauty of Sri Lanka.",
+  icons: {
+    icon: '/maporia-logo-transparent-1.svg',
+  },
+  openGraph: {
+    title: "Maporia - Rediscover Sri Lanka",
+    description: "A gamified travel portfolio app to unlock the beauty of Sri Lanka.",
+    images: [
+      {
+        url: '/maporia-logo-wBackground.png',
+        width: 1200,
+        height: 630,
+        alt: 'Maporia - Rediscover Sri Lanka',
+      },
+    ],
+    locale: 'en_US',
+    type: 'website',
+  },
 };
 
 export default function RootLayout({ children }) {
