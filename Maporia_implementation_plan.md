@@ -1,210 +1,65 @@
-# MaporiaSL Marketing Website — Implementation Plan & Task List
+# Maporia Marketing Website - Implementation Plan
 
-This document contains **two sections**:
+## Project Overview
+**Goal:** Create a modern, high-performance marketing landing page for the "Maporia" mobile app (Sri Lanka Travel Portfolio).
+**Tech Stack:** Next.js (App Router), Tailwind CSS, Framer Motion (for animations/live components).
+**Design Aesthetic:** "Glassmorphism", modern, premium, video background loops, dynamic interactions.
+**Target Audience:** Sri Lankan travelers and explorers.
 
-1. **Implementation Starter (Actual Build Begins Here)**
-2. **Task List (Markdown Format, No Developer Separation)**
+## Key Sections
+1.  **Hero Section**:
+    -   Background: Looping video of beautiful Sri Lankan scenery.
+    -   Glassy overlay with Headline: "Unlock Sri Lanka, One District at a Time".
+    -   Call to Action (CTA): "Join Waitlist".
+2.  **About / Vision**:
+    -   Brief explanation of the "Gamified Travel" concept (Clouds, Unlocking districts).
+3.  **Features List**:
+    -   Interactive cards showing: Map Unlocking, Achievements, Trip Planning, Social Sharing.
+4.  **Building Team**:
+    -   Showcase the "Maporia" team members.
+5.  **Survey / Help Request**:
+    -   "Help us build better" CTA connecting to a Google Form.
+6.  **Waitlist / Questionnaire**:
+    -   Email subscription form.
+    -   Mini Q&A about travel preferences.
+7.  **FAQ**:
+    -   Common questions (Is it free? Android/iOS? etc.).
+8.  **Contact & Footer**:
+    -   Social links, copyright, contact info.
 
----
+## Technical Requirements
+-   **Framework**: Next.js 14+ (App Router).
+-   **Styling**: Tailwind CSS + Custom "Glass" utilities.
+-   **Animations**: Framer Motion for scroll reveals and hover effects.
+-   **Icons**: Lucide React or similar.
+-   **Forms**: Simple state management for the waitlist (mockup or local storage for now, unless backend specified).
 
-# 1. IMPLEMENTATION STARTER
+## Step-by-Step Implementation
 
-Below is the complete scaffold + step-by-step implementation structure for beginning the build of the MaporiaSL marketing site using **Vite + React (JSX) + CSS** with the **Sunset Coastline** palette.
+### Phase 1: Setup & Design System
+- [ ] Install dependencies (`framer-motion`, `lucide-react`, `clsx`, `tailwind-merge`).
+- [ ] Configure Tailwind for custom colors (Sri Lankan inspired palettes) and "glass" utilities.
+- [ ] Set up global layout and fonts (modern sans-serif).
 
----
+### Phase 2: Core Components
+- [ ] Create `Hero` component with video background.
+- [ ] Create `GlassCard` reusable component.
+- [ ] Create `Section` wrapper for consistent spacing.
 
-## 🔧 Project Setup
+### Phase 3: Section Implementation
+- [ ] **Hero**: Implement video loop and main text.
+- [ ] **About**: creating the "Gamification" visual explanation.
+- [ ] **Features**: Grid of glass cards describing app features.
+- [ ] **Team**: Avatar/Profile cards for the team.
+- [ ] **Survey/Waitlist**: Interactive forms/buttons.
+- [ ] **FAQ/Footer**: Accordion for FAQs and standard footer.
 
-### 1. Create Vite Project
+### Phase 4: Polish & SEO
+- [ ] Add smooth scrolling and entrance animations.
+- [ ] Update Metadata (Title, Description, OpenGraph).
+- [ ] responsive check (Mobile view is critical).
 
-```bash
-npm create vite@latest maporia-marketing --template react
-cd maporia-marketing
-npm install
-```
-
-### 2. Project Structure
-
-```
-/src
-  /assets
-  /components
-    Navbar.jsx
-    Footer.jsx
-    Hero.jsx
-    FeaturesGrid.jsx
-    FeatureCard.jsx
-    MockupsShowcase.jsx
-    TeamSection.jsx
-    CTASection.jsx
-    WaitlistForm.jsx
-    GoTopButton.jsx
-    NotFound404.jsx
-  /pages
-    Home.jsx
-  App.jsx
-  main.jsx
-  index.css
-```
-
-### 3. Add Global CSS Variables (Sunset Coastline Palette)
-
-**index.css**:
-
-```css
-:root{
-  --color-deep-navy: #0A1A2F;
-  --color-sunrise-orange: #F78A1D;
-  --color-coral-peach: #FFAD90;
-  --color-sand-beige: #F3E5D8;
-  --color-ocean-teal: #1CA8A9;
-
-  --text-default: var(--color-deep-navy);
-  --bg-default: var(--color-sand-beige);
-  --radius: 12px;
-  --shadow-soft: 0 10px 30px rgba(10,26,47,0.08);
-}
-```
-
-### 4. Base Layout
-
-* Create `Navbar.jsx`, `Footer.jsx` with empty placeholders
-* App.jsx should render:
-
-```jsx
-<Navbar />
-<main>
-  <Home />
-</main>
-<Footer />
-<GoTopButton />
-```
-
----
-
-# 2. TASK LIST (MARKDOWN FORMAT)
-
-Below is the **complete build task list** formatted as a Markdown file — clean, standalone, no developer assignment.
-
----
-
-# MaporiaSL Marketing Website — Task List
-
-## 📁 Sprint 0 — Setup
-
-* [ ] Initialize Vite React project
-* [ ] Add global CSS variables (Sunset Coastline palette)
-* [ ] Add fonts, CSS reset, layout containers
-* [ ] Configure routing (if used)
-* [ ] Create base folder structure
-
----
-
-## 🧭 Sprint 1 — Header & Footer
-
-* [ ] Implement Navbar (desktop + mobile)
-* [ ] Sticky header with scroll shadow
-* [ ] Smooth scroll navigation
-* [ ] Placeholder Logo
-* [ ] Implement Footer structure (links + project email + GitHub link)
-* [ ] Add waitlist subscription placeholder in footer
-
----
-
-## 🎨 Sprint 2 — Hero Section
-
-* [ ] Create Hero component (title, subtitle, CTAs)
-* [ ] Add mockup placeholder
-* [ ] Fade-in animation for hero text
-* [ ] Parallax small motion for mockup
-* [ ] Ensure mobile-first layout
-
----
-
-## 🧩 Sprint 3 — Features Overview
-
-* [ ] Build FeatureCard component
-* [ ] Build FeaturesGrid section
-* [ ] Add 6–10 feature cards from the app feature list
-* [ ] Add scroll reveal animation (fade-up)
-
----
-
-## 📱 Sprint 4 — App Mockups Showcase
-
-* [ ] Add 4 screens of application (placeholders)
-* [ ] Build MockupsShowcase grid/carousel
-* [ ] Add modal view to enlarge images
-* [ ] Add mobile swipe interaction
-
----
-
-## 🧑‍🚀 Sprint 5 — Team Section
-
-* [ ] Add team member JSON data
-* [ ] Build card layout
-* [ ] Add GitHub + LinkedIn icons
-* [ ] Add hover effects and accessibility labels
-
----
-
-## 📨 Sprint 6 — Footer Subscription & CTA
-
-* [ ] Build WaitlistForm component
-* [ ] Add email validation
-* [ ] Add success + error UI
-* [ ] Add project email + GitHub prominently
-* [ ] Add final CTA section above footer
-
----
-
-## ⬆️ Sprint 7 — Go‑to‑Top Button
-
-* [ ] Add floating button bottom‑right
-* [ ] Appear after scrolling 300px
-* [ ] Smooth scroll to top
-* [ ] Keyboard + screen reader accessible
-
----
-
-## ⚙️ Sprint 8 — Animations & Polishing
-
-* [ ] Add scroll reveal for all sections
-* [ ] Add hover transitions for all interactive elements
-* [ ] Add shadow + micro‑interaction improvements
-* [ ] Optimize all images to WebP
-* [ ] Add basic SEO meta tags
-
----
-
-## 🚨 Sprint 9 — Error / Utility Pages
-
-* [ ] Create 404 page with link to Home
-* [ ] Create simple Privacy Policy page
-* [ ] Create simple Terms page
-* [ ] Add robots.txt and sitemap.xml
-
----
-
-## 🚀 Sprint 10 — Final QA + Deployment
-
-* [ ] Cross-device mobile testing
-* [ ] Check contrast accessibility
-* [ ] Validate all outgoing links
-* [ ] Confirm CTAs scroll correctly
-* [ ] Deploy to Vercel/Netlify
-* [ ] Run Lighthouse report
-* [ ] Publish final production URL
-
----
-
-# ✔️ This MD can be copy-pasted into your GitHub repo directly
-
-If you'd like, I can also generate:
-
-* A **README.md** for your marketing repo
-* A GitHub **CONTRIBUTING.md** file
-* A GitHub **Issue Template + PR Template**
-* Full code scaffolding for each component next
-
-Tell me what you want next!
+## Questions for User
+-   Do you have the specific video file for the background? (I can use a placeholder)
+-   Do you have the team member details (Names, Roles, Images)?
+-   Google Form URL for the survey?
