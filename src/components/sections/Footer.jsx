@@ -16,9 +16,9 @@ export function Footer() {
 
                 {/* Links */}
                 <div className="flex gap-8 text-sm font-medium">
-                    <a href="#" className="hover:text-teal-400 transition-colors">Privacy</a>
-                    <a href="#" className="hover:text-teal-400 transition-colors">Terms</a>
-                    <a href="#" className="hover:text-teal-400 transition-colors">Contact</a>
+                    <a href="#features" className="hover:text-teal-400 transition-colors">Features</a>
+                    <a href="#team" className="hover:text-teal-400 transition-colors">Team</a>
+                    <a href="#about" className="hover:text-teal-400 transition-colors">Contribute</a>
                 </div>
 
                 {/* Socials */}
