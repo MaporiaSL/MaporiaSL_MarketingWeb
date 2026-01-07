@@ -12,6 +12,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata = {
+  metadataBase: new URL('https://maporiasl.com'),
   title: "Maporia - Rediscover Sri Lanka",
   description: "A gamified travel portfolio app to unlock the beauty of Sri Lanka.",
   icons: {
