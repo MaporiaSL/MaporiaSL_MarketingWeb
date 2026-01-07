@@ -151,7 +151,7 @@ export function Team() {
                                     viewport={{ once: true }}
                                     transition={{ delay: index * 0.1 }}
                                 >
-                                    <GlassCard className="flex flex-col sm:flex-row items-center sm:items-start gap-6 p-6 hover:border-teal-500/30 transition-colors group">
+                                    <GlassCard className="flex flex-col sm:flex-row items-center sm:items-start gap-4 sm:gap-6 p-6 hover:border-teal-500/30 transition-colors group text-center sm:text-left">
                                         {/* Avatar / Circle */}
                                         <div className="relative shrink-0 w-16 h-16">
                                             <div className="w-full h-full rounded-full bg-slate-800 flex items-center justify-center text-xl font-bold text-white border border-white/10 group-hover:border-teal-500 transition-colors overflow-hidden">

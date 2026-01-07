@@ -37,7 +37,7 @@ export function Waitlist() {
             <div className="absolute inset-0 bg-gradient-to-t from-teal-900/40 to-slate-950 z-0" />
 
             <div className="container relative z-10 px-4">
-                <GlassCard className="max-w-4xl mx-auto text-center p-12 py-16 bg-gradient-to-br from-white/10 to-white/5 border-white/20">
+                <GlassCard className="max-w-4xl mx-auto text-center p-6 py-12 md:p-12 md:py-16 bg-gradient-to-br from-white/10 to-white/5 border-white/20">
                     <motion.h2
                         initial={{ opacity: 0 }}
                         whileInView={{ opacity: 1 }}

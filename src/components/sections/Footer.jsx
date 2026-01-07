@@ -3,7 +3,7 @@ import { Github, Linkedin, MapPin } from 'lucide-react';
 export function Footer() {
     return (
         <footer className="bg-slate-950 border-t border-white/10 py-12 text-slate-400">
-            <div className="container mx-auto px-4 flex flex-col md:flex-row justify-between items-center gap-6">
+            <div className="container mx-auto px-4 flex flex-col md:flex-row justify-between items-center gap-8 md:gap-6">
 
                 {/* Brand */}
                 <div className="text-center md:text-left">

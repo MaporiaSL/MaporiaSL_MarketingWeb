@@ -59,7 +59,7 @@ export function Hero() {
                     <span className="inline-block py-1 px-3 rounded-full border border-white/20 bg-white/5 text-sm uppercase tracking-wider text-teal-300 mb-6 backdrop-blur-md">
                         Coming Soon
                     </span>
-                    <h1 className="text-5xl md:text-7xl font-bold text-white mb-6 leading-tight tracking-tight">
+                    <h1 className="text-4xl md:text-7xl font-bold text-white mb-6 leading-tight tracking-tight">
                         Unlock <span className="text-transparent bg-clip-text bg-gradient-to-r from-teal-400 to-emerald-400">Sri Lanka</span>, <br />
                         One District at a Time.
                     </h1>
