@@ -1,10 +1,36 @@
 'use client';
 
+import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Button } from '../ui/Button';
 import { GlassCard } from '../ui/GlassCard';
+import { addToWaitlist } from '../../app/actions';
+import { Loader2, CheckCircle, AlertCircle } from 'lucide-react';
 
 export function Waitlist() {
+    const [email, setEmail] = useState('');
+    const [status, setStatus] = useState('idle'); // idle, loading, success, error
+    const [message, setMessage] = useState('');
+
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+        setStatus('loading');
+
+        const formData = new FormData();
+        formData.append('email', email);
+
+        const result = await addToWaitlist(null, formData);
+
+        if (result.success) {
+            setStatus('success');
+            setTimeout(() => setStatus('idle'), 5000); // Reset after 5s
+            setEmail('');
+        } else {
+            setStatus('error');
+        }
+        setMessage(result.message);
+    };
+
     return (
         <section className="py-24 relative overflow-hidden flex items-center justify-center">
             {/* Dynamic Background */}
@@ -23,20 +49,45 @@ export function Waitlist() {
                         Maporia is currently in closed beta. Join the waitlist to be among the first explorers to clear the clouds.
                     </p>
 
-                    <form className="flex flex-col sm:flex-row gap-4 justify-center max-w-md mx-auto" onSubmit={(e) => e.preventDefault()}>
+                    <form onSubmit={handleSubmit} className="flex flex-col sm:flex-row gap-4 justify-center max-w-md mx-auto relative">
                         <input
                             type="email"
+                            required
+                            value={email}
+                            onChange={(e) => setEmail(e.target.value)}
                             placeholder="Enter your email"
-                            className="flex-1 px-6 py-4 rounded-full bg-white/10 border border-white/20 text-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-teal-400 transition-all"
+                            disabled={status === ('loading') || status === 'success'}
+                            className="flex-1 px-6 py-4 rounded-full bg-white/10 border border-white/20 text-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-teal-400 transition-all disabled:opacity-50"
                         />
-                        <Button size="lg" className="rounded-full px-8 bg-teal-500 hover:bg-teal-400 text-white border-none shadow-xl shadow-teal-900/50">
-                            Get Early Access
+                        <Button
+                            type="submit"
+                            size="lg"
+                            disabled={status === 'loading' || status === 'success'}
+                            className={`rounded-full px-8 border-none shadow-xl min-w-[160px] ${status === 'success' ? 'bg-green-500 hover:bg-green-600' : 'bg-teal-500 hover:bg-teal-400'} text-white shadow-teal-900/50`}
+                        >
+                            {status === 'loading' ? <Loader2 className="animate-spin" /> :
+                                status === 'success' ? <CheckCircle /> :
+                                    "Get Early Access"}
                         </Button>
                     </form>
 
-                    <p className="mt-6 text-sm text-slate-500">
-                        We promise not to spam. Only updates about our launch.
-                    </p>
+                    {/* Feedback Message */}
+                    {message && (
+                        <motion.div
+                            initial={{ opacity: 0, y: 10 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            className={`mt-6 text-sm font-medium flex items-center justify-center gap-2 ${status === 'error' ? 'text-red-400' : 'text-teal-400'}`}
+                        >
+                            {status === 'error' && <AlertCircle size={16} />}
+                            {message}
+                        </motion.div>
+                    )}
+
+                    {!message && (
+                        <p className="mt-6 text-sm text-slate-500">
+                            We promise not to spam. Only updates about our launch.
+                        </p>
+                    )}
                 </GlassCard>
             </div>
         </section>

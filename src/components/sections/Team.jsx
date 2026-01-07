@@ -39,20 +39,20 @@ const team = [
         initials: "KS"
     },
     {
+        name: "Hitheshi Kariyawasam",
+        role: "UI/UX & Product Design",
+        github: "https://github.com/hitheshik",
+        linkedin: "https://www.linkedin.com/in/hitheshi-kariyawasam-719600378/",
+        avatar: "/team-avatar/woman.png",
+        initials: "HK"
+    },
+    {
         name: "Sedani Lesara",
         role: "UI/UX & QA",
         github: "https://github.com/Sedani25",
         linkedin: "http://www.linkedin.com/in/sedani-lesara-sethumlee-956998395",
         avatar: "/team-avatar/woman-3.jpg",
         initials: "SL"
-    },
-    {
-        name: "Hitheshi Kariyawasam",
-        role: "UI/UX & Product Design",
-        github: "https://github.com/hitheshik",
-        linkedin: "",
-        avatar: "/team-avatar/woman.png",
-        initials: "HK"
     }
 ];
 

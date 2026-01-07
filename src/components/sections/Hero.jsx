@@ -68,12 +68,24 @@ export function Hero() {
                     </p>
 
                     <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-                        <Button size="lg" variant="primary">
+                        <Button
+                            size="lg"
+                            variant="primary"
+                            onClick={() => {
+                                const element = document.getElementById('waitlist');
+                                if (element) {
+                                    const offset = 100;
+                                    const bodyRect = document.body.getBoundingClientRect().top;
+                                    const elementRect = element.getBoundingClientRect().top;
+                                    const elementPosition = elementRect - bodyRect;
+                                    const offsetPosition = elementPosition - offset;
+                                    window.scrollTo({ top: offsetPosition, behavior: 'smooth' });
+                                }
+                            }}
+                        >
                             Join the Waitlist
                         </Button>
-                        <Button size="lg" variant="glass">
-                            Watch Trailer
-                        </Button>
+
                     </div>
                 </motion.div>
             </div>

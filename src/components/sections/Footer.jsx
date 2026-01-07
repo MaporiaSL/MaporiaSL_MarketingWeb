@@ -1,4 +1,4 @@
-import { Facebook, Instagram, Twitter, MapPin } from 'lucide-react';
+import { Github, Linkedin, MapPin } from 'lucide-react';
 
 export function Footer() {
     return (
@@ -23,14 +23,11 @@ export function Footer() {
 
                 {/* Socials */}
                 <div className="flex gap-4">
-                    <a href="#" className="p-2 rounded-full bg-white/5 hover:bg-white/10 text-white transition-colors">
-                        <Instagram size={20} />
+                    <a href="https://github.com/MaporiaSL" target="_blank" rel="noopener noreferrer" className="p-2 rounded-full bg-white/5 hover:bg-white/10 text-white transition-colors">
+                        <Github size={20} />
                     </a>
-                    <a href="#" className="p-2 rounded-full bg-white/5 hover:bg-white/10 text-white transition-colors">
-                        <Twitter size={20} />
-                    </a>
-                    <a href="#" className="p-2 rounded-full bg-white/5 hover:bg-white/10 text-white transition-colors">
-                        <Facebook size={20} />
+                    <a href="https://www.linkedin.com/company/maporia/" target="_blank" rel="noopener noreferrer" className="p-2 rounded-full bg-white/5 hover:bg-white/10 text-white transition-colors">
+                        <Linkedin size={20} />
                     </a>
                 </div>
             </div>
