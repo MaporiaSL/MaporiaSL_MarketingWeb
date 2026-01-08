@@ -44,7 +44,7 @@ export function Hero() {
                     muted
                     playsInline
                     className="object-cover w-full h-full scale-105" // Slight zoom to prevent edge artifacts
-                    src="/ajn-loop.mp4"
+                    src="/srilanka-loop.mp4"
                 />
                 <div className="absolute inset-0 bg-black/50 bg-gradient-to-t from-slate-950 via-black/50 to-teal-950/30 backdrop-blur-[2px]" />
             </div>
