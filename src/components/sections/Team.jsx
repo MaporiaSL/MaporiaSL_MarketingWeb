@@ -10,7 +10,7 @@ const team = [
         name: "Anuk Ranasinghe",
         role: "Frontend Developer",
         github: "https://github.com/anucr",
-        linkedin: "",
+        linkedin: "https://www.linkedin.com/in/anuk-ranasinghe-667b2823a/",
         avatar: "https://api.dicebear.com/9.x/notionists/svg?seed=Anuk&backgroundColor=e0f2fe",
         initials: "AR"
     },
